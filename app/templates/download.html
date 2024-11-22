@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center mb-4">
+        <h1><i class="bi bi-check-circle-fill text-success"></i></h1>
+        <h2 class="mb-4">Document Processed Successfully!</h2>
+    </div>
+    
+    <div class="col-md-10">
+        <div class="row justify-content-center g-4">
+            <div class="col-md-6">
+                <div class="card download-card h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-word feature-icon"></i>
+                        <h4>Word Document</h4>
+                        <p>Download the processed document in its original Word format.</p>
+                        <a href="{{ word_download_url }}" class="btn btn-primary">
+                            <i class="bi bi-download"></i> Download DOCX
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card download-card h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-pdf feature-icon"></i>
+                        <h4>PDF Document</h4>
+                        <p>Download the processed document converted to PDF format.</p>
+                        <a href="{{ pdf_download_url }}" class="btn btn-primary">
+                            <i class="bi bi-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-outline-light">
+                <i class="bi bi-arrow-left"></i> Process Another Document
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

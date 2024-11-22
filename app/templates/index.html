@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card main-card">
+            <div class="card-header text-center">
+                <i class="bi bi-shield-lock-fill header-icon"></i>
+                <h2>SecureDoc Pro</h2>
+                <p class="text-muted mb-0">Secure Document Watermarking Tool</p>
+            </div>
+            <div class="card-body">
+                <form id="uploadForm" class="needs-validation" novalidate>
+                    <div class="mb-4">
+                        <label for="documentFile" class="form-label">
+                            <i class="bi bi-file-earmark-word"></i> Select Word Document
+                        </label>
+                        <div class="file-input-wrapper">
+                            <input type="file" class="custom-file-input" id="documentFile" name="file" accept=".doc,.docx" required>
+                            <label class="custom-file-label" for="documentFile">
+                                <i class="bi bi-upload"></i> Choose file...
+                            </label>
+                        </div>
+                        <small class="text-light-muted">Supported formats: .doc, .docx</small>
+                        <div class="invalid-feedback">
+                            Please select a Word document.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="hiddenText" class="form-label">
+                            <i class="bi bi-eye-slash"></i> Hidden Text
+                        </label>
+                        <textarea class="form-control" id="hiddenText" name="hidden_text" rows="4" required 
+                                placeholder="Enter the text you want to hide in the document..."></textarea>
+                        <small class="text-light-muted">This text will be hidden as a watermark</small>
+                        <div class="invalid-feedback">
+                            Please enter the text to hide.
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg process-btn">
+                            <i class="bi bi-shield-lock"></i> Process Document
+                        </button>
+                    </div>
+                </form>
+
+                <div id="processingStatus" class="mt-4 d-none">
+                    <div class="alert alert-info d-flex align-items-center">
+                        <i class="bi bi-arrow-repeat spin me-2"></i>
+                        <span>Processing your document...</span>
+                    </div>
+                </div>
+
+                <div id="downloadSection" class="mt-4 d-none">
+                    <div class="alert alert-success d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <span>Document processed successfully!</span>
+                        </div>
+                        <a href="#" id="downloadLink" class="btn btn-success">
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
